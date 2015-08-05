@@ -8,6 +8,10 @@ class Product(object):
 	count = 0
 	vat = 0
 
+class Product(object):
+	def price_with_vat(self):
+		return self.price * self.count * self.vat
+
 robot = Product()
 robot.price = 900
 robot.count = 2
@@ -18,4 +22,6 @@ book.price = 100
 book.count = 1
 book.vat = 1.06
 
-print robot.price * robot.count * robot.vat + book.price * book.count * book.vat
+print robot.price_with_vat()+book.price_with_vat()
+
+
