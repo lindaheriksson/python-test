@@ -29,13 +29,60 @@
 #--
 
 
+# class Product(object):
+# 	def __init__(self, price, count, vat):
+# 		self.price = price
+# 		self.count = count
+# 		self.vat = vat 
+# 	def price_with_vat(self):
+# 		return self.price*self.count*self.vat
+	
+
+# products = [
+# 	Product(price=900,count=2,vat=1.25), 
+# 	Product(price=100, count=1, vat=1.06)
+# ]
+
+# total_price = products[0].price_with_vat() + products[1].price_with_vat()
+
+# print total_price
+
+#----
+
+# class Product(object):
+# 	def __init__(self, price, count, vat):
+# 		self.price = price
+# 		self.count = count
+# 		self.vat = vat 
+# 	def price_with_vat(self):
+# 		return self.price*self.count*self.vat
+	
+
+# products = [
+# 	Product(price=900,count=2,vat=1.25), 
+# 	Product(price=100, count=1, vat=1.06)
+# ]
+
+# total_price = 0
+
+# for product in products:
+# 	total_price += product.price_with_vat()
+
+# print total_price
+
+#---
+
 class Product(object):
 	def __init__(self, price, count, vat):
 		self.price = price
 		self.count = count
 		self.vat = vat 
 	def price_with_vat(self):
-		return self.price*self.count*self.vat
+		total = self.price * self.count * self.vat
+		if self.price < 500:
+			return 0.9 * total
+		else:
+			return total
 	
 
 products = [
@@ -43,13 +90,11 @@ products = [
 	Product(price=100, count=1, vat=1.06)
 ]
 
-total_price = products[0].price_with_vat() + products[1].price_with_vat()
+total_price = 0
+
+for product in products:
+	total_price += product.price_with_vat()
 
 print total_price
-
-
-
-
-
 
 
